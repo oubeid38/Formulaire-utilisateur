@@ -19,7 +19,7 @@ jobs:
             echo "Construction terminée"
             #Créer un dossier de sortie 'dist' pour le déploiement
             mkdir dist
-            cp mon_site.html dist/mon_site.html
+            cp site_formulaire.html dist/site_formulaire.html
  
         - name: Archive des artefacts
           uses: actions/upload-artifact@v4
@@ -40,10 +40,10 @@ jobs:
         - name: Lancer des tests
           run: |
             echo "Démarrage des tests..."
-            if [ -f "./mon_site.html"]; then
-              echo "Test réussi :  Le fichier mon_site.html existe."
+            if [ -f "./site_formulaire.html"]; then
+              echo "Test réussi :  Le fichier site_formulaire.html existe."
             else
-              echo "Test échoué : Le fichier mon_site.html est manquant."
+              echo "Test échoué : Le fichier msite_formulaire.html est manquant."
               exit  
             fi
   deploy:
