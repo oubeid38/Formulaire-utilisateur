@@ -5,12 +5,12 @@ on:
     branches:
         - "main"
  
-jobs:
+jobs:S
   build:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout du code
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
  
         - name: Construire le site
           run: |
@@ -22,7 +22,7 @@ jobs:
             cp site_formulaire.html dist/site_formulaire.html
  
         - name: Archive des artefacts
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: site-artefact
             path: dist
@@ -32,7 +32,7 @@ jobs:
     needs: build
     steps:
         - name: Téléchargement des artefacts
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
           with:
               name: site-artefact
               path: ./
